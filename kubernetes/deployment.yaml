@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sre-ai-app
+  labels:
+    app: sre-ai-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sre-ai-app
+  template:
+    metadata:
+      labels:
+        app: sre-ai-app
+    spec:
+      containers:
+      - name: sre-ai-app
+        image: sre-ai-app:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: sre-ai-app-config
+        - secretRef:
+            name: sre-ai-app-secret
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 3
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
