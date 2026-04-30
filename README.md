@@ -447,7 +447,7 @@ kubectl get all
 ## 👩‍💻 Author
 
 **Swagatika Joshi**
-SRE/DevOps Engineer | QA Background | Austin, TX
+SRE/DevOps Engineer
 
 > *"Built this project to demonstrate real-world SRE skills by combining infrastructure automation, observability, and AI-powered incident response."*
 
