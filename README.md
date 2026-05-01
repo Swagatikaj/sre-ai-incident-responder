@@ -320,11 +320,17 @@ averageUtilization: 70         # scale up if CPU > 70%
 
 ---
 
-## 🔄 Phase 3 — CI/CD Pipeline *(coming soon)*
+## 🔄 Phase 3 — CI/CD Pipeline
 
-- GitHub Actions for automated testing and Docker builds
-- Jenkins for deployment pipeline
-- Auto deploy on every git push
+### GitHub Actions ✅
+- Auto runs tests on every push to main
+- Auto builds Docker image if tests pass
+- Quality gate — build job only runs if test job passes
+- View pipeline: GitHub repo → Actions tab
+
+### Jenkins ⏳ coming soon
+- Deployment pipeline
+- Auto deploy to Kubernetes
 
 ---
 
