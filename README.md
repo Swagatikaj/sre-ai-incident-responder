@@ -320,13 +320,18 @@ averageUtilization: 70         # scale up if CPU > 70%
 
 ---
 
-## 🔄 Phase 3 — CI/CD Pipeline
+## Phase 3 — CI/CD Pipeline ✅
 
-✅ GitHub Actions full CI/CD pipeline
+### GitHub Actions
 → Job 1: Auto runs tests on every push
-→ Job 2: Builds Docker image if tests pass
-→ Job 3: Deploy stage ready for production
-→ Quality gates between every stage
+→ Job 2: SonarCloud code quality scan
+→ Job 3: Builds Docker image if scan passes
+→ Job 4: Deploy stage ready for production
+
+### SonarCloud
+→ Security scanning
+→ Code quality checks
+→ Maintainability analysis
 
 ---
 
