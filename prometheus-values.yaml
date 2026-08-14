@@ -1,0 +1,10 @@
+server:
+  persistentVolume:
+    storageClass: "standard"
+
+serverFiles:
+  prometheus.yml:
+    scrape_configs:
+      - job_name: 'sre-ai-app'
+        static_configs:
+          - targets: ['sre-ai-app-service.default.svc.cluster.local:8080']
