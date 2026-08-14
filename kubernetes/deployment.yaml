@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sre-ai-app
-        image: sre-ai-app:v1
+        image: sre-ai-app:v4
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
